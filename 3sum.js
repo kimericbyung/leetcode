@@ -14,16 +14,16 @@ const threeSum = nums => {
     left = i + 1;
     right = nums.length - 1;
     while (left < right) {
+      if (nums[right] === nums[right + 1]) {
+        right--;
+        continue;
+      }
       sum = nums[i] + nums[left] + nums[right];
       if (sum < 0) {
         left++;
       } else if (sum > 0) {
         right--;
       } else {
-        if (nums[right] === nums[right + 1]) {
-          right--;
-          continue;
-        }
         sums.push([nums[i], nums[left], nums[right]]);
         left++;
         right--;
