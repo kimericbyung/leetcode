@@ -18,3 +18,5 @@ var permute = function(nums) {
   let perms = rotations(nums);
   return perms;
 };
+
+permute([1,2,3,4])
