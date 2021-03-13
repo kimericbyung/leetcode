@@ -30,8 +30,8 @@ class LRUCache {
   put(key, value) {
     if (!this.head) {
       this.head = new Node(value, key);
-    }
-    if (this.cache[key]) {
+      this.cache[key] = this.head;
+    } else if (this.cache[key]) {
       this.cache[key].prev.next = this.cache[key].next;
       this.cache[key].next.prev = this.cache[key].prev;
       let newNode = new Node(value, key, this.head)
